@@ -2,16 +2,11 @@
 
 all: 1-fork 2-wait
 
-lab1_stdout_gprof: lab1_stdout_gprof.c always
-	gcc -pg -o out/lab1_stdout_gprof lab1_stdout_gprof.c
-	clear
-	out/lab1_stdout_gprof 
-	gprof out/lab1_stdout_gprof gmon.out > gprof.txt
 
 lab1_stdout: lab1_stdout.c always
-	gcc -pg -o out/lab1_stdout lab1_stdout.c
+	gcc  -o out/lab1_stdout lab1_stdout.c
 	clear
-	out/lab1_stdout >stdout.txt  2>stderr.txt
+	out/lab1_stdout
 
 
 lab2_background: lab2_background.c always
@@ -60,7 +55,7 @@ lab9_signal: lab9_signal_post.c lab9_signal_wait.c always
 	out/lab9_signal_post
 
 lab10_sigfault : lab10_sigfault.c always
-	gcc -o out/lab10_sigfault lab10_sigfault.c
+	gcc -g -o out/lab10_sigfault lab10_sigfault.c
 	clear
 	out/lab10_sigfault
 

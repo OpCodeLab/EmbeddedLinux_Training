@@ -18,12 +18,16 @@ int main()
   printf("Will print \n");
    
     // I/O buffered since no newline
+    printf("Will not     print\n");
+    printf("Will not     print\n");
     printf("Will not     print");
+    printf("Will not     print");printf("Will not     print");
    
 
-    exit(0);
- //   _exit(0);
+    //exit(0);
+    _exit(0);
 
- //return 0;
+  //return 0;
+  
 
 }

@@ -13,18 +13,23 @@ int main(int argc, char* argv[])
     if (id < 0)
     {
         perror("fork failed");
-        exit(1);
+        exit(1); 
     }
        
     if (id == 0) 
     {
         printf("*** Hello from child process! fork() returned id=%d, my PID=%d, my PPID=%d\n", id, getpid(), getppid());
-        sleep(3);
-        exit(0);
+        while(1)
+        {
+            sleep(1);
+        }
+        //sleep(3);
+        //exit(0);
     } 
     else 
     {
         printf("---Hello from parent process! fork() returned child id=%d, my PID=%d\n", id, getpid());
+
 
         int status;
         wait( &status); // Wait for the child process to finish

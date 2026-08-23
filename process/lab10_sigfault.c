@@ -5,7 +5,9 @@
 #include <unistd.h>
 #include <sys/types.h>
 
-
+//ulimit -c unlimited
+//echo "core" | sudo tee /proc/sys/kernel/core_pattern
+//dmesg | tail
 
 
 
@@ -24,7 +26,7 @@ int main()
     sa.sa_flags = SA_SIGINFO;
     
     // Set up the signal handler for SIGSEGV  POSIX API
-    sigaction(SIGSEGV, &sa, NULL);
+    //sigaction(SIGSEGV, &sa, NULL);
 
     int *ptr = (int*)0x400; //invalid address
     *ptr = 123;  // Will cause SIGSEGV

@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <sys/wait.h>
 
-#if 0
+#if 1
 int main()
  {
     int status = system("ls -l");

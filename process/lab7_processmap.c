@@ -36,7 +36,7 @@ int main()
         // Simulate child work
         while (1) 
         {
-            sleep(1); // Sleep to simulate work
+           // sleep(1); // Sleep to simulate work
         }
 
     } 

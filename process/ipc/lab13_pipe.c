@@ -5,6 +5,8 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
+int x=152;
+
 int main(int argc, char* argv[]) {
     
    // create pipe       
@@ -31,7 +33,7 @@ int main(int argc, char* argv[]) {
     else
      { // Parent process
    
-
+          x++;
    
     }
 
