@@ -30,7 +30,18 @@ int main() {
     }
 
     // Write to shared memory
-   
+    const char *message = "Hello from writer!";
+    memcpy(shm_ptr, message, strlen(message) + 1);
+
+    printf("Writer wrote: %s\n", (char *)shm_ptr);
+
+    // Keep it alive for reading
+    sleep(5);
+
+    // Cleanup
+    munmap(shm_ptr, SHM_SIZE);
+    close(shm_fd);
+    shm_unlink(SHM_NAME); // Remove the shared memory object
 
     return 0;
 }

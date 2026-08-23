@@ -18,12 +18,17 @@ int main() {
     }
 
     // Map it into address space
-
+    void *shm_ptr = mmap(NULL, SHM_SIZE, PROT_READ, MAP_SHARED, shm_fd, 0);
+    if (shm_ptr == MAP_FAILED) {
+        perror("mmap");
+        exit(1);
+    }
 
     // Read and print message
     printf("Reader read: %s\n", (char *)shm_ptr);
 
-
+    // Cleanup
+    munmap(shm_ptr, SHM_SIZE);
     close(shm_fd);
 
     return 0;

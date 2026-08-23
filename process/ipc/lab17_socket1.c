@@ -64,7 +64,7 @@ int main() {
     // Cleanup
     close(client_fd);
     close(server_fd);
-    unlink(SOCKET_PATH);
+    //unlink(SOCKET_PATH);
 
     return 0;
 }

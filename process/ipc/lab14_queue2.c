@@ -22,5 +22,20 @@ int main()
         exit(1);
     }
 
+  
+    // Receive the message
+    ssize_t bytes_read = mq_receive(mq, buffer, MAX_SIZE, NULL);
+    if (bytes_read < 0)
+     {
+        perror("mq_receive");
+        exit(1);
+    }
+
+    buffer[bytes_read] = '\0';
+    printf("Received message: %s\n", buffer);
+
+    mq_close(mq);
+    mq_unlink(QUEUE_NAME); // Delete the queue
+
     return 0;
 }
