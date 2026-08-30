@@ -1,0 +1,9 @@
+FROM gcc:latest
+
+WORKDIR /app
+
+COPY server.c .
+
+RUN gcc -Wall -O2 server.c -o server
+
+CMD ["./server"]

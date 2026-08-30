@@ -1,0 +1,8 @@
+FROM archlinux:latest
+
+RUN pacman -Sy --noconfirm gcc
+
+COPY server.c .
+RUN gcc server.c -o server
+
+CMD ["./server"]
