@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build lab_multithreading_debug",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-c",
+                "mkdir -p ${workspaceFolder}/seance6/out && gcc -g -O0 -pthread -Wall -o ${workspaceFolder}/seance6/out/lab_multithreading_debug ${workspaceFolder}/seance6/lab_multithreading_debug.c"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/seance6"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
