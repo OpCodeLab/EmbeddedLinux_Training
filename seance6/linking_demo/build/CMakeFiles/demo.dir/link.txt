@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/demo.dir/main.c.o -o demo  -Wl,-rpath,/home/mhanzout/linux/current_Train/EmbeddedLinux_Training/seance6/linking_demo/build/shared_lib static_lib/libstrutils.a shared_lib/libmathops.so.1.0 
